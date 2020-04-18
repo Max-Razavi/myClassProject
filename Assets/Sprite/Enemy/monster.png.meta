@@ -1,13 +1,17 @@
 fileFormatVersion: 2
-guid: 9fdfbdd2741d2fe4a91543e09541a123
+guid: 1db941933b0c8064c815e7786c8277ca
 TextureImporter:
   fileIDToRecycleName:
-    21300000: planetMFx_0
-    21300002: planetMFx_1
-    21300004: planetMFx_2
-    21300006: planetMFx_3
-    21300008: planetMFx_4
-    21300010: planetMFx_5
+    21300000: monster_0
+    21300002: monster_1
+    21300004: monster_2
+    21300006: monster_3
+    21300008: monster_4
+    21300010: monster_5
+    21300012: monster_6
+    21300014: monster_7
+    21300016: monster_8
+    21300018: monster_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -101,13 +105,113 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: planetMFx_0
+      name: monster_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7349e1f45568683448b961bb17e679b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75367dfb7b0f9664c802f84c9061eebe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070f64e36eed7ba4892b516a02ef6209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 464b92d8db1064d4ba1280a502d88fa3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e905efab9192b4a90b3ac88255094a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 500
-        height: 1000
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,19 +219,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60a4b03f65fe0564a840ff93c560ee86
+      spriteID: 88494e7ba5d654c4b99a1ace613bb374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planetMFx_1
+      name: monster_6
       rect:
         serializedVersion: 2
-        x: 500
+        x: 200
         y: 0
-        width: 500
-        height: 1000
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,19 +239,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29f1bbd088c826c4399a522246a0df12
+      spriteID: 91b9f5b09b4de87458e8f119f785e182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planetMFx_2
+      name: monster_7
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 400
         y: 0
-        width: 500
-        height: 1000
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,19 +259,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70311e8821faebe43a5374fc3253024a
+      spriteID: 7b0d9d7b16ff0974c8815a2c4a887781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planetMFx_3
+      name: monster_8
       rect:
         serializedVersion: 2
-        x: 1500
+        x: 600
         y: 0
-        width: 500
-        height: 1000
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,19 +279,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5b8a32bb30c6e7418a4020c76bb68b2
+      spriteID: 99780849427a1414fbab1423215bd529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planetMFx_4
+      name: monster_9
       rect:
         serializedVersion: 2
-        x: 2000
+        x: 800
         y: 0
-        width: 500
-        height: 1000
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,27 +299,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c281ff4282cce794790abc8f38d88c6b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: planetMFx_5
-      rect:
-        serializedVersion: 2
-        x: 2500
-        y: 0
-        width: 500
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8531677b734cf06479e5ba8177bc9eef
+      spriteID: 177be8d64ba1b8d4aa235cbe83fc912f
       vertices: []
       indices: 
       edges: []
@@ -223,7 +307,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 47ab30994bc539d41ac5b53217846811
+    spriteID: c46a5c7c41ace674380cc300deac1f58
     vertices: []
     indices: 
     edges: []
