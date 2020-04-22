@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player :MonoBehaviour
+public class Player :MonoBehaviour,IDamageable
 {    
 
 
     private Rigidbody2D _rigid;
     [SerializeField]
-    private int _health;
+    private int _health=3;
     [SerializeField]
     private float _jumpForce = 40.0f;
     public bool _grounded = false;
@@ -22,6 +22,7 @@ public class Player :MonoBehaviour
     private PlayerAnimation _playeranim;
     private SpriteRenderer _playerSprite;
 
+    public int Health { get; set; }
 
 
 
@@ -31,7 +32,7 @@ public class Player :MonoBehaviour
         _rigid = GetComponent<Rigidbody2D>();
         _playeranim = GetComponent<PlayerAnimation>();
         _playerSprite = GetComponentInChildren<SpriteRenderer>();
-
+        Health = this._health;
     }
 
     // Update is called once per frame
@@ -105,5 +106,17 @@ public class Player :MonoBehaviour
         _resetJump = true;
         yield return new WaitForSeconds(0.1f);
         _resetJump = false;
+    }
+
+    public void Damage()
+    {
+        Health--;
+        //anim.SetTrigger("hit");
+
+
+        if (Health < 1)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
