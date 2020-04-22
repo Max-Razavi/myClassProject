@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
-    private Rigidbody2D _rigid;
+public class Player :MonoBehaviour
+{    
 
+
+    private Rigidbody2D _rigid;
+    [SerializeField]
+    private int _health;
     [SerializeField]
     private float _jumpForce = 40.0f;
     public bool _grounded = false;
@@ -28,15 +31,18 @@ public class Player : MonoBehaviour
         _rigid = GetComponent<Rigidbody2D>();
         _playeranim = GetComponent<PlayerAnimation>();
         _playerSprite = GetComponentInChildren<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        Movement();        
-
+        Movement();
     }
+
+   
+
     void Movement()
     {
         //move
