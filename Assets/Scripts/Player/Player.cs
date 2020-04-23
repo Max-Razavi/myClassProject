@@ -10,6 +10,8 @@ public class Player :MonoBehaviour,IDamageable
     [SerializeField]
     private int _health=3;
     [SerializeField]
+    private float _speed = 22.0f;
+    [SerializeField]
     private float _jumpForce = 40.0f;
     public bool _grounded = false;
     private bool _resetJump = false;
@@ -17,8 +19,7 @@ public class Player :MonoBehaviour,IDamageable
     [SerializeField]
     private LayerMask _groondLayer;
 
-    [SerializeField]
-    private float _speed = 22.0f;
+    
     private PlayerAnimation _playeranim;
     private SpriteRenderer _playerSprite;
     private SpriteRenderer _handArcSprite;
@@ -85,10 +86,10 @@ public class Player :MonoBehaviour,IDamageable
     bool IsGrounded()
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 5.0f, _groondLayer.value);
-        Debug.DrawRay(transform.position, Vector2.down*5.0f, Color.green);
+        //Debug.DrawRay(transform.position, Vector2.down*5.0f, Color.green);
         if (hitInfo.collider != null)
         {
-            Debug.Log("Hit: " + hitInfo.collider.name);
+            //Debug.Log("Hit: " + hitInfo.collider.name);
             if (_resetJump == false)
             {
                 _playeranim.Jump(false);
@@ -126,7 +127,6 @@ public class Player :MonoBehaviour,IDamageable
             //change z for handArc when flip
             _ArcObject.transform.localRotation = Quaternion.Euler(0, 0, 45);
            
-            
         }
     
     }

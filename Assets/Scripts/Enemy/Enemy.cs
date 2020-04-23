@@ -7,7 +7,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField]
     protected int health;
     [SerializeField]
-    protected int speed;
+    protected float speed;
     [SerializeField]
     protected int gems;
     [SerializeField]
@@ -17,12 +17,15 @@ public abstract class Enemy : MonoBehaviour
     protected Animator anim;
     protected SpriteRenderer sprite;
 
-    
+    protected Player player;
+
+    protected bool isHit = false;
+
     public virtual void Init()
     {
         anim = GetComponentInChildren<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-       
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     private void Start()
@@ -32,7 +35,7 @@ public abstract class Enemy : MonoBehaviour
     }
     public virtual void Update()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") )
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") && anim.GetBool("InCombat")==false)
         {
             return;
         }
@@ -53,20 +56,50 @@ public abstract class Enemy : MonoBehaviour
         if (transform.position == pointA.position)
         {
             currentTarget = pointB.position;
-            anim.SetTrigger("idle");
+            anim.SetTrigger("Idle");
 
 
         }
         else if (transform.position == pointB.position)
         {
             currentTarget = pointA.position;
-            anim.SetTrigger("idle");
+            anim.SetTrigger("Idle");
 
 
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
+
+        if(isHit == false)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
+        }
         
+
+
+        float distance = Vector3.Distance(transform.localPosition, player.transform.localPosition);
+        //Debug.Log("distance : " + distance);
+        if (distance > 20.0f)
+        {
+            isHit = false;
+            anim.SetBool("InCombat", false);
+        }
+
+        //float distance = Vector3.Distance(player.transform.localPosition, transform.localPosition);
+        //Debug.Log("distance : " + distance);
+
+        Vector3 direction = player.transform.localPosition - transform.localPosition;
+        //Debug.Log("side : " + direction.x);
+
+        if (direction.x > 0 && anim.GetBool("InCombat") == true)
+        {
+            sprite.flipX = true;
+        }
+        else if (direction.x < 0 && anim.GetBool("InCombat") == true)
+        {
+            sprite.flipX = false;
+        }
+
+
     }
  
 

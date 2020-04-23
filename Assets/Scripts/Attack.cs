@@ -11,16 +11,20 @@ public class Attack : MonoBehaviour
 
         IDamageable hit = other.GetComponent<IDamageable>();
 
-        if(_canDamage == true)
+        if(hit != null)
         {
-            hit.Damage();
-            _canDamage = false;
-            StartCoroutine(ResetDamage());
+            if (_canDamage == true)
+            {
+                hit.Damage();
+                _canDamage = false;
+                StartCoroutine(ResetDamage());
+            }
         }
+        
     }
     IEnumerator ResetDamage()
     {
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.5f);
         _canDamage = true;
     }
 }

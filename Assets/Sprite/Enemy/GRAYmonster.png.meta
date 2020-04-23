@@ -1,11 +1,17 @@
 fileFormatVersion: 2
-guid: 435fe5aeda6b98e4a89dee1362d30ae4
+guid: a98d40407430f3443a0bfb317132d945
 TextureImporter:
   fileIDToRecycleName:
-    21300000: monsterIdle_0
-    21300002: monsterIdle_1
-    21300004: monsterIdle_2
-    21300006: monsterIdle_3
+    21300000: GRAYmonster_0
+    21300002: GRAYmonster_1
+    21300004: GRAYmonster_2
+    21300006: GRAYmonster_3
+    21300008: GRAYmonster_4
+    21300010: GRAYmonster_5
+    21300012: GRAYmonster_6
+    21300014: GRAYmonster_7
+    21300016: GRAYmonster_8
+    21300018: GRAYmonster_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -99,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monsterIdle_0
+      name: GRAYmonster_0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,13 +119,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d421276b7ec1c654e84d12e697eb9241
+      spriteID: 7077058ffc4fc1d458486c0e3fc0b730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monsterIdle_1
+      name: GRAYmonster_1
       rect:
         serializedVersion: 2
         x: 200
@@ -133,13 +139,73 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ad45191d524d7144a6b3b4e19a417ad
+      spriteID: 5b0253fb4992462448d733f5a82b73ff
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monsterIdle_2
+      name: GRAYmonster_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae90d5db81875b4f9f248e7b8e16448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRAYmonster_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043974e90f04c9448b44f203544f390f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRAYmonster_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 198905b2f1e305141a86bb3a4db69878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRAYmonster_5
       rect:
         serializedVersion: 2
         x: 0
@@ -153,13 +219,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1854c25396bffdb4a8b8de42260571f4
+      spriteID: 827155ab6b8e0644eb01832c4df3aeb1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monsterIdle_3
+      name: GRAYmonster_6
       rect:
         serializedVersion: 2
         x: 200
@@ -173,7 +239,67 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c02a506573e9e484a8344093c7cb6b18
+      spriteID: a8fa5ac345c5cab45ae002c80d3b347c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRAYmonster_7
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2748bc2a21a4379478bbb245eef5721f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRAYmonster_8
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3ba2fae89441447a6b5e5fb850cd35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRAYmonster_9
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc44d884d5f572469ecebea928e4fb3
       vertices: []
       indices: 
       edges: []
@@ -181,7 +307,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d39e327ad9bbaf9408c9e87a9c8d64f9
+    spriteID: 8f0291a656e97784d87896df1d4b08d9
     vertices: []
     indices: 
     edges: []
