@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6158713485619055556}
   - component: {fileID: 6158713485619055557}
   - component: {fileID: 6158713485619055419}
+  - component: {fileID: 3612620649570150119}
   m_Layer: 8
   m_Name: rockSbx
   m_TagString: Untagged
@@ -112,3 +113,24 @@ EdgeCollider2D:
   - {x: 1.5444336, y: -5.3729534}
   - {x: 0.17366028, y: -6.4513235}
   - {x: -0.95570374, y: -6.5079784}
+--- !u!50 &3612620649570150119
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6158713485619055558}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: fc2d8ecf90c9afe44995a857c7803db1, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

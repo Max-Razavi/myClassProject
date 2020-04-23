@@ -21,6 +21,9 @@ public class Player :MonoBehaviour,IDamageable
     private float _speed = 22.0f;
     private PlayerAnimation _playeranim;
     private SpriteRenderer _playerSprite;
+    private SpriteRenderer _handArcSprite;
+
+    private GameObject _ArcObject;
 
     public int Health { get; set; }
 
@@ -32,6 +35,8 @@ public class Player :MonoBehaviour,IDamageable
         _rigid = GetComponent<Rigidbody2D>();
         _playeranim = GetComponent<PlayerAnimation>();
         _playerSprite = GetComponentInChildren<SpriteRenderer>();
+        _handArcSprite = transform.GetChild(1).GetComponent<SpriteRenderer>();
+        _ArcObject = GameObject.FindGameObjectWithTag("HandArc");
         Health = this._health;
     }
 
@@ -40,6 +45,10 @@ public class Player :MonoBehaviour,IDamageable
     {
 
         Movement();
+        if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
+        {
+            _playeranim.Attack();
+        }
     }
 
    
@@ -94,11 +103,32 @@ public class Player :MonoBehaviour,IDamageable
         if (faceRight == true)
         {
             _playerSprite.flipX = false;
+            _handArcSprite.flipX = false;
+            _handArcSprite.flipY = false;
+
+            Vector3 newPose = _handArcSprite.transform.localPosition;
+            newPose.x = 1.01f;
+            _handArcSprite.transform.localPosition = newPose;
+            _ArcObject.transform.localRotation = Quaternion.Euler(0, 0, -45);
         }
         else if (faceRight == false)
         {
             _playerSprite.flipX = true;
+            _handArcSprite.flipX = true;
+           
+
+            Vector3 newPos = _ArcObject.transform.localPosition;
+            
+            
+            newPos.x = 0.25f;
+            
+            _ArcObject.transform.localPosition = newPos;
+            //change z for handArc when flip
+            _ArcObject.transform.localRotation = Quaternion.Euler(0, 0, 45);
+           
+            
         }
+    
     }
 
     IEnumerator ResetJumpRoutine()
