@@ -36,4 +36,12 @@ public class PlayerAnimation : MonoBehaviour
         _anim.SetTrigger("Attack");
         _handAnimation.SetTrigger("HandAnimation");
     }
+    public void Hit()
+    {
+        _anim.SetTrigger("Hit");
+    }
+    public void Die()
+    {
+        _anim.SetTrigger("Death");
+    }
 }

@@ -23,8 +23,11 @@ public class Player :MonoBehaviour,IDamageable
     private PlayerAnimation _playeranim;
     private SpriteRenderer _playerSprite;
     private SpriteRenderer _handArcSprite;
+    
 
     private GameObject _ArcObject;
+
+    protected bool isDead = false;
 
     public int Health { get; set; }
 
@@ -44,11 +47,14 @@ public class Player :MonoBehaviour,IDamageable
     // Update is called once per frame
     void Update()
     {
-
-        Movement();
-        if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
+        if(isDead == false)
         {
-            _playeranim.Attack();
+            Movement();
+
+            if (Input.GetMouseButtonDown(0) && IsGrounded() == true)
+            {
+                _playeranim.Attack();
+            }
         }
     }
 
@@ -140,13 +146,21 @@ public class Player :MonoBehaviour,IDamageable
 
     public void Damage()
     {
+        if (isDead == true)
+        {
+            _playeranim.Die();
+            return;
+        }
+
         Health--;
-        //anim.SetTrigger("hit");
+        _playeranim.Hit();
 
 
         if (Health < 1)
         {
-            Destroy(this.gameObject);
+            isDead = true;
+            _playeranim.Die();
+            Destroy(this.gameObject, 7.0f);
         }
     }
 }
