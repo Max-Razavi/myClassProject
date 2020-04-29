@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - HandArc
+  - Enemy
+  - EnemtPatrol
   layers:
   - Default
   - TransparentFX
@@ -56,4 +58,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1378412315
+    locked: 0
+  - name: Bullet
+    uniqueID: 492995129
     locked: 0

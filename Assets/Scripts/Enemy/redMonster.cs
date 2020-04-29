@@ -5,9 +5,12 @@ using UnityEngine;
 public class redMonster : Enemy, IDamageable
 {
 
+    public GameObject bulletPrefabe;
+
+    //public Transform player;
+    //public Rigidbody2D bullet;
+
     public int Health { get; set; }
-
-
     public override void Init()
     {
         base.Init();
@@ -17,6 +20,10 @@ public class redMonster : Enemy, IDamageable
     {
         base.Movement();
     }
+    //public override void Update()
+    //{
+
+    //}
 
     public void Damage()
     {
@@ -38,6 +45,14 @@ public class redMonster : Enemy, IDamageable
             anim.SetTrigger("Death");
             Destroy(this.gameObject, 5.0f);
         }
+    }
+
+    public void Attack()
+    {
+        //Instantiate(bulletPrefabe, transform.position, transform.rotation);
+        ////var fire = Instantiate(bulletPrefabe, player.position, player.rotation);
+        ////bullet.AddForce(player.up * 6);
+
     }
 
 

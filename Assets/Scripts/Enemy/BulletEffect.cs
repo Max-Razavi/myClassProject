@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletEffect : MonoBehaviour
 {
+
+    
     private void Start()
     {
         Destroy(this.gameObject, 3.0f);
@@ -12,6 +14,7 @@ public class BulletEffect : MonoBehaviour
     {
         transform.Translate(Vector3.right * 9 * Time.deltaTime);
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")

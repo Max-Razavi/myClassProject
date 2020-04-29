@@ -21,12 +21,14 @@ public abstract class Enemy : MonoBehaviour
 
     protected bool isDead = false;
     protected bool isHit = false;
+    
 
     public virtual void Init()
     {
         anim = GetComponentInChildren<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        
     }
 
     private void Start()

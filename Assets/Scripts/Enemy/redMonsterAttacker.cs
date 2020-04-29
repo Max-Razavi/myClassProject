@@ -6,6 +6,9 @@ public class redMonsterAttacker : Enemy,IDamageable
 {
 
     public GameObject bulletPrefabe;
+
+    
+
     public int Health { get; set; }
 
     public override void Init()
@@ -15,12 +18,10 @@ public class redMonsterAttacker : Enemy,IDamageable
         Health = base.health;
     }
 
-
     public override void Update()
     {
         
     }
-
 
     public void Damage()
     {
@@ -49,6 +50,8 @@ public class redMonsterAttacker : Enemy,IDamageable
     }
     public void Attack()
     {
+        
         Instantiate(bulletPrefabe, transform.position, Quaternion.identity);
+        //transform.Translate(transform.right * 9 * Time.deltaTime);
     }
 }
