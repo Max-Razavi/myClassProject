@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6158713485619055419}
   - component: {fileID: 3612620649570150119}
   - component: {fileID: 897487439}
-  - component: {fileID: 897487438}
   m_Layer: 8
   m_Name: rockStable
   m_TagString: Untagged
@@ -152,19 +151,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0.08519143, y: 5.4186273}
   m_Size: {x: 9.772368, y: 0.1350403}
   m_Direction: 1
---- !u!114 &897487438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6158713485619055558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4995f3ee49efc2044b9d91fdb574e561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPos: {fileID: 0}
-  pos1: {fileID: 0}
-  pos2: {fileID: 0}
-  _speed: 3

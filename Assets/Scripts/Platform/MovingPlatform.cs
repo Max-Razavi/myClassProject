@@ -43,13 +43,13 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("in ");
+            //Debug.Log("in ");
             player.transform.parent = this.transform;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("out ");
+        //Debug.Log("out ");
         player.transform.parent = null;
     }
 }

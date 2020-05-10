@@ -7,7 +7,7 @@ public class Attack : MonoBehaviour
     private bool _canDamage = true;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hit: " + other.name);
+        //Debug.Log("hit: " + other.name);
 
         IDamageable hit = other.GetComponent<IDamageable>();
 

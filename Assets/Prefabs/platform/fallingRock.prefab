@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5250781347918139988}
   - component: {fileID: 2906717228677991687}
   m_Layer: 8
-  m_Name: fallingRock 2
+  m_Name: fallingRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020768123390777035}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 98.78941, y: 3.6667814, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -164,3 +164,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32bb899495242f8448906d05ed1bb848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rockObject: {fileID: 2020768123390777035}
+  _posObject: {fileID: 0}
