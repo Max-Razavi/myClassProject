@@ -17,9 +17,10 @@ public class Player :MonoBehaviour,IDamageable
     private bool _resetJump = false;
     
     [SerializeField]
-    private LayerMask _groondLayer;
+    private LayerMask _groundLayer;
+    [SerializeField]
+    private float respawnDelay = 1f;
 
-    
     private PlayerAnimation _playeranim;
     private SpriteRenderer _playerSprite;
     private SpriteRenderer _handArcSprite;
@@ -30,6 +31,9 @@ public class Player :MonoBehaviour,IDamageable
     protected bool isDead = false;
 
     public int Health { get; set; }
+
+    public Vector3 respawnPoint;
+
 
 
 
@@ -42,6 +46,8 @@ public class Player :MonoBehaviour,IDamageable
         _handArcSprite = transform.GetChild(1).GetComponent<SpriteRenderer>();
         _ArcObject = GameObject.FindGameObjectWithTag("HandArc");
         Health = this._health;
+
+        respawnPoint=transform.position;
     }
 
     // Update is called once per frame
@@ -91,7 +97,7 @@ public class Player :MonoBehaviour,IDamageable
     }
     bool IsGrounded()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 5.0f, _groondLayer.value);
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 5.0f, _groundLayer.value);
         //Debug.DrawRay(transform.position, Vector2.down*5.0f, Color.green);
         if (hitInfo.collider != null)
         {
@@ -156,11 +162,50 @@ public class Player :MonoBehaviour,IDamageable
         _playeranim.Hit();
 
 
-        if (Health < 1)
+        if (Health <= 0)
         {
-            isDead = true;
+            
             _playeranim.Die();
-            Destroy(this.gameObject, 7.0f);
+            isDead = true;
+            //this.gameObject.SetActive(false);
+            respawnPlayer();
+            //Destroy(this.gameObject, 7.0f);
+            //transform.position = respawnPoint;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "FallDetector")
+        {
+            transform.position = respawnPoint;
+            //respawnPlayer();
+            //StartCoroutine("RespawnCoroutine2");
+        }
+        if (other.tag == "CheckPoint")
+        {
+            respawnPoint = other.transform.position;
+        }
+    }
+    private void respawnPlayer()
+    {
+        StartCoroutine("RespawnCoroutine");
+    }
+
+    private IEnumerator RespawnCoroutine()
+    {
+        
+        yield return new WaitForSeconds(respawnDelay);
+        this.gameObject.SetActive(false);
+        //this.transform.position = respawnPoint;
+        //this.gameObject.SetActive(true);
+        //StartCoroutine("RespawnCoroutine2");
+    }
+    private IEnumerator RespawnCoroutine2()
+    {
+        
+        yield return new WaitForSeconds(1.0f);
+        this.gameObject.SetActive(true);
+
     }
 }
