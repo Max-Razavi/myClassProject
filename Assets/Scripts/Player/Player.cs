@@ -34,6 +34,8 @@ public class Player :MonoBehaviour,IDamageable
 
     public Vector3 respawnPoint;
 
+    public LevelManager _levelManager;
+    private int fallCount = 0;
 
 
 
@@ -48,6 +50,7 @@ public class Player :MonoBehaviour,IDamageable
         Health = this._health;
 
         respawnPoint=transform.position;
+        _levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -155,22 +158,15 @@ public class Player :MonoBehaviour,IDamageable
         if (isDead == true)
         {
             _playeranim.Die();
+            _levelManager.RespawnDie();
             return;
         }
-
         Health--;
         _playeranim.Hit();
 
-
-        if (Health <= 0)
+        if (Health < 1)
         {
-            
-            _playeranim.Die();
             isDead = true;
-            //this.gameObject.SetActive(false);
-            respawnPlayer();
-            //Destroy(this.gameObject, 7.0f);
-            //transform.position = respawnPoint;
         }
     }
 
@@ -178,34 +174,18 @@ public class Player :MonoBehaviour,IDamageable
     {
         if(other.tag == "FallDetector")
         {
-            transform.position = respawnPoint;
-            //respawnPlayer();
-            //StartCoroutine("RespawnCoroutine2");
+            fallCount++;
+            if (fallCount >= 3)
+            {
+                _levelManager.RespawnDie();
+            }
+            _levelManager.RespawnFall();
+            Damage();
+
         }
         if (other.tag == "CheckPoint")
         {
             respawnPoint = other.transform.position;
         }
-    }
-    private void respawnPlayer()
-    {
-        StartCoroutine("RespawnCoroutine");
-    }
-
-    private IEnumerator RespawnCoroutine()
-    {
-        
-        yield return new WaitForSeconds(respawnDelay);
-        this.gameObject.SetActive(false);
-        //this.transform.position = respawnPoint;
-        //this.gameObject.SetActive(true);
-        //StartCoroutine("RespawnCoroutine2");
-    }
-    private IEnumerator RespawnCoroutine2()
-    {
-        
-        yield return new WaitForSeconds(1.0f);
-        this.gameObject.SetActive(true);
-
     }
 }
