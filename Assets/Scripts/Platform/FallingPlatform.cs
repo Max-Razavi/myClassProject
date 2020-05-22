@@ -13,7 +13,17 @@ public class FallingPlatform : MonoBehaviour
     [SerializeField]
     protected GameObject _posObject;
 
+    [SerializeField]
+    protected float delayTime;
+    [SerializeField]
+    protected float destroyTime;
+    [SerializeField]
+    protected float gravityScale;
+    [SerializeField]
+    protected float dalayfalling;
+
     private bool _destroy = false;
+    
 
 
 
@@ -30,7 +40,7 @@ public class FallingPlatform : MonoBehaviour
         {
             SpawnRock();
             _destroy = false;
-            Debug.Log("i do 2");
+            //Debug.Log("i do 2");
         }
     }
     public void OnTriggerEnter2D(Collider2D other)
@@ -38,23 +48,23 @@ public class FallingPlatform : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            StartCoroutine(ResetJumpRoutine());
-            Destroy(this.gameObject, 17.5f);
+            StartCoroutine("ResetFallRoutine");
+            Destroy(this.gameObject, destroyTime);
             StartCoroutine(ResetDestroy());
-            Debug.Log("i do 1");
+            //Debug.Log("i do 1");
         }
     }
-    IEnumerator ResetJumpRoutine()
+    IEnumerator ResetFallRoutine()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(dalayfalling);
         //_rigidbody2D.WakeUp();
         this._rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
-        this._rigidbody2D.gravityScale = 2.0f;
+        this._rigidbody2D.gravityScale = gravityScale;
 
     }
     IEnumerator ResetDestroy()
     {
-        yield return new WaitForSeconds(17.0f);
+        yield return new WaitForSeconds(delayTime);
         _destroy = true;
 
     }
