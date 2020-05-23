@@ -24,8 +24,8 @@ public class Player :MonoBehaviour,IDamageable
     private PlayerAnimation _playeranim;
     private SpriteRenderer _playerSprite;
     private SpriteRenderer _handArcSprite;
-    
 
+    private Animator _anim;
     private GameObject _ArcObject;
 
     protected bool isDead = false;
@@ -48,8 +48,8 @@ public class Player :MonoBehaviour,IDamageable
         _handArcSprite = transform.GetChild(1).GetComponent<SpriteRenderer>();
         _ArcObject = GameObject.FindGameObjectWithTag("HandArc");
         Health = this._health;
-
-        respawnPoint=transform.position;
+        _anim = GetComponentInChildren<Animator>();
+        respawnPoint =transform.position;
         _levelManager = FindObjectOfType<LevelManager>();
     }
 
@@ -72,6 +72,7 @@ public class Player :MonoBehaviour,IDamageable
     void Movement()
     {
         //move
+
         float move = Input.GetAxisRaw("Horizontal");
         _grounded = IsGrounded();
 
@@ -164,9 +165,10 @@ public class Player :MonoBehaviour,IDamageable
         Health--;
         _playeranim.Hit();
 
-        if (Health < 1)
+        if (Health == 0)
         {
             isDead = true;
+            _anim.SetBool("Dizzy",true);
         }
     }
 
@@ -175,7 +177,7 @@ public class Player :MonoBehaviour,IDamageable
         if(other.tag == "FallDetector")
         {
             fallCount++;
-            if (fallCount >= 3)
+            if (fallCount >= _health)
             {
                 _levelManager.RespawnDie();
             }

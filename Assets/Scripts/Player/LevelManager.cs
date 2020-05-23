@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
 
     public float respawnDelayFall = 2.0f;
-    public float respawnDelayDie = 2.0f;
+    public float respawnDelayDie = 1.5f;
     public Player _player;
 
     // Start is called before the first frame update

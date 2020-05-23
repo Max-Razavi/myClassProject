@@ -7,6 +7,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private Animator _anim;
     private Animator _handAnimation;
+    private 
 
 
     // Start is called before the first frame update
@@ -41,8 +42,13 @@ public class PlayerAnimation : MonoBehaviour
     {
         _anim.SetTrigger("Hit");
     }
+    public void Hit(bool dizzy)
+    {
+        _anim.SetBool("Dizzy", true);
+    }
     public void Die()
     {
         _anim.SetTrigger("Death");
+        
     }
 }

@@ -40,7 +40,6 @@ public class FallingPlatform : MonoBehaviour
         {
             SpawnRock();
             _destroy = false;
-            //Debug.Log("i do 2");
         }
     }
     public void OnTriggerEnter2D(Collider2D other)

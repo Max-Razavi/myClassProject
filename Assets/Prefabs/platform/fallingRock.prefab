@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2906717228677991687}
   m_Layer: 8
   m_Name: fallingRock
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,3 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rockObject: {fileID: 2020768123390777035}
   _posObject: {fileID: 0}
+  delayTime: 17
+  destroyTime: 17.5
+  gravityScale: 2
+  dalayfalling: 3
