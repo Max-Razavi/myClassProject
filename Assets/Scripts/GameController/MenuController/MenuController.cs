@@ -19,4 +19,8 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene("ScoreMenu");
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
