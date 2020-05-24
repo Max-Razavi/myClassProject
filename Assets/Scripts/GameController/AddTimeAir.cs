@@ -11,12 +11,14 @@ public class AddTimeAir : MonoBehaviour
 			if (gameObject.tag == "addTime")
 			{
 				GameObject.Find("GamePlayController").GetComponent<LevelTimer>().time += 1.5f;
+				
 			}
 			//else
 			//{
 			//	GameObject.Find("GamePlayController").GetComponent<AirTimer>().air += 15f;
 			//}
-			Destroy(gameObject);
+			this.GetComponent<AudioSource>().Play();
+			Destroy(gameObject,0.29f);
 		}
 	}
 }

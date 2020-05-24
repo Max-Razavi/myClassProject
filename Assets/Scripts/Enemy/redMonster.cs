@@ -43,7 +43,8 @@ public class redMonster : Enemy, IDamageable
         {
             isDead = true;
             anim.SetTrigger("Death");
-            Destroy(this.gameObject, 5.0f);
+            this.GetComponent<AudioSource>().Play();
+            Destroy(this.gameObject, 3.0f);
         }
     }
 

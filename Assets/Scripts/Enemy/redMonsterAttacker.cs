@@ -7,8 +7,6 @@ public class redMonsterAttacker : Enemy,IDamageable
 
     public GameObject bulletPrefabe;
 
-    
-
     public int Health { get; set; }
 
     public override void Init()
@@ -17,6 +15,7 @@ public class redMonsterAttacker : Enemy,IDamageable
 
         Health = base.health;
     }
+
 
     public override void Update()
     {
@@ -40,7 +39,8 @@ public class redMonsterAttacker : Enemy,IDamageable
         {
             isDead = true;
             anim.SetTrigger("Death");
-            Destroy(this.gameObject, 5.0f);
+            this.GetComponent<AudioSource>().Play();
+            Destroy(this.gameObject, 3.0f);
         }
     
     }
