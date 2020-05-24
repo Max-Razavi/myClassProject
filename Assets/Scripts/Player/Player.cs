@@ -18,8 +18,6 @@ public class Player :MonoBehaviour,IDamageable
     
     [SerializeField]
     private LayerMask _groundLayer;
-    //[SerializeField]
-    //private float respawnDelay = 1f;
 
     private PlayerAnimation _playeranim;
     private SpriteRenderer _playerSprite;

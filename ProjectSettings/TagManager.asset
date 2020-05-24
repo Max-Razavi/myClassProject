@@ -10,6 +10,8 @@ TagManager:
   - FallDetector
   - CheckPoint
   - Ice
+  - Ground
+  - addTime
   layers:
   - Default
   - TransparentFX
@@ -58,6 +60,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 3970142735
+    locked: 0
+  - name: BlackHole
+    uniqueID: 2477152869
     locked: 0
   - name: Player
     uniqueID: 1378412315

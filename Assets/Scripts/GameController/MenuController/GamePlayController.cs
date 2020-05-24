@@ -9,12 +9,8 @@ public class GamePlayController : MonoBehaviour
     [SerializeField]
     private GameObject pausePanel;
     [SerializeField]
-    private GameObject WinPanel;
-    [SerializeField]
     private Button resumeGameButton;
-    [SerializeField]
-    private Button menuGameButton;
-
+    
     [SerializeField]
     private Text pauseText;
     public Player _player;
@@ -31,13 +27,20 @@ public class GamePlayController : MonoBehaviour
         }
         
     }
-    void PlayerDiedScene()
+    public void PlayerDiedScene()
     {
         pauseText.text = "Game Over";
         pausePanel.SetActive(true);
         resumeGameButton.onClick.RemoveAllListeners();
-        menuGameButton.onClick.RemoveAllListeners();
         resumeGameButton.onClick.AddListener(() => RestartGame());
+        Time.timeScale = 0;
+    }
+    public void PlayerWinScene()
+    {
+        pauseText.text = "You Win!";
+        pausePanel.SetActive(true);
+        resumeGameButton.onClick.RemoveAllListeners();
+        resumeGameButton.onClick.AddListener(() => NextLevel());
         Time.timeScale = 0;
     }
     IEnumerator DiedScene()
@@ -71,5 +74,10 @@ public class GamePlayController : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("ScoreMenu");
+    }
+    public void NextLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("levelScene2");
     }
 }
