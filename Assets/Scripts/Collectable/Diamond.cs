@@ -24,6 +24,7 @@ public class Diamond : MonoBehaviour
         if(other.tag == "Player")
         {
             _audioSource.Play();
+            
             //StartCoroutine("HideGameObject");
             Destroy(gameObject, 0.26f);
             //gameObject.SetActive(false);

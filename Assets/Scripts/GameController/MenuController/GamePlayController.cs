@@ -14,6 +14,9 @@ public class GamePlayController : MonoBehaviour
     [SerializeField]
     private Text pauseText;
     public Player _player;
+    public GameObject _Backgroundsound;
+    public bool soundOn;
+    
 
     private void Update()
     {
@@ -79,5 +82,19 @@ public class GamePlayController : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("levelScene2");
+    }
+    public void Sound()
+    {
+        if (soundOn == true)
+        {
+            _Backgroundsound.GetComponent<AudioSource>().mute = true;
+            soundOn = false;
+        }
+         else if (soundOn ==false)
+        {
+            _Backgroundsound.GetComponent<AudioSource>().mute = false;
+            soundOn = true;
+        }
+        
     }
 }
