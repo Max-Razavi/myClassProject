@@ -151,3 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d46591d737a9c74289de5a3deaf5337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletTime: 15
+  _destroybulletTime: 1.8

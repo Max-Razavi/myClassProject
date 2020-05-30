@@ -72,7 +72,7 @@ public class FallingPlatform : MonoBehaviour
         //Vector2 rockPosition = new Vector2(transform.position.x, transform.position.y);
         this._rigidbody2D.bodyType = RigidbodyType2D.Static;
         this._rigidbody2D.gravityScale = 0.0f;
-        Instantiate(_rockObject, _posObject.transform.position, Quaternion.identity);
+        //Instantiate(_rockObject, _posObject.transform.position, Quaternion.identity);
     }
     
 }

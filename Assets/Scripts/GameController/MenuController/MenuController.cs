@@ -8,7 +8,7 @@ public class MenuController : MonoBehaviour
     public void PlayGame()
     {
         //Application.LoadLevel("MainMenu");
-        SceneManager.LoadScene("levelScene");
+        SceneManager.LoadScene("levelScene1");
     }
     public void MainMenu()
     {

@@ -71,7 +71,7 @@ public class GamePlayController : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("levelScene");
+        SceneManager.LoadScene("levelScene1");
     }
     public void ScoreMenu()
     {

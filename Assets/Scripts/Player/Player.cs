@@ -76,7 +76,8 @@ public class Player :MonoBehaviour,IDamageable
     {
         //move
 
-        float move = CrossPlatformInputManager.GetAxisRaw("Horizontal"); //Input.GetAxisRaw("Horizontal");
+        //float move = Input.GetAxisRaw("Horizontal"); 
+        float move = CrossPlatformInputManager.GetAxisRaw("Horizontal");
         _grounded = IsGrounded();
 
         if (move > 0)
@@ -88,8 +89,8 @@ public class Player :MonoBehaviour,IDamageable
             Flip(false);
         }
         //jump
-        //if ((Input.GetKeyDown(KeyCode.Space) || CrossPlatformInputManager.GetButtonDown("B_Button")) && IsGrounded() == true)
-        if (CrossPlatformInputManager.GetButtonDown("B_Button") && IsGrounded() == true)
+        if ((Input.GetKeyDown(KeyCode.Space) || CrossPlatformInputManager.GetButtonDown("B_Button")) && IsGrounded() == true)
+        //if (CrossPlatformInputManager.GetButtonDown("B_Button") && IsGrounded() == true)
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, _jumpForce); 
             StartCoroutine(ResetJumpRoutine());
